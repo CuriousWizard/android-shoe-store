@@ -8,8 +8,19 @@
         android:layout_height="match_parent"
         tools:context=".WelcomeFragment">
 
+        <ImageView
+            android:id="@+id/waving_hand_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toTopOf="@+id/welcome_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/waving_hand" />
+
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/welcome_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/welcome_to_the_app"
@@ -20,7 +31,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/welcome_message_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -31,7 +42,7 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/welcome_text_view" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_next"
@@ -41,10 +52,10 @@
             android:layout_marginBottom="16dp"
             android:clickable="true"
             android:contentDescription="@string/next"
+            android:focusable="true"
             android:src="@drawable/ic_next"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:focusable="true" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
