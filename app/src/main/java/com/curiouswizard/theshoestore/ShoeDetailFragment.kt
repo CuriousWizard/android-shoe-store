@@ -25,13 +25,12 @@ class ShoeDetailFragment : Fragment() {
         binding.buttonSave.setOnClickListener {
             if (binding.nameEditText.text.toString() != "" || binding.sizeEditText.text.toString() != "" ||
                 binding.companyEditText.text.toString() != "" || binding.descriptionEditText.text.toString() != "") {
-
                     sharedViewModel.addShoe(
                         binding.nameEditText.text.toString(),
                         binding.sizeEditText.text.toString().toDouble(),
                         binding.companyEditText.text.toString(),
                         binding.descriptionEditText.text.toString()
-                )
+                    )
                 findNavController().navigateUp()
             }
             else{

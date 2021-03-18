@@ -9,6 +9,12 @@ import androidx.lifecycle.ViewModel
 import com.curiouswizard.theshoestore.model.Shoe
 
 class ActivityViewModel : ViewModel() {
+
+    val company: MutableLiveData<String> = MutableLiveData()
+    val name: MutableLiveData<String> = MutableLiveData()
+    val sizeString: MutableLiveData<String> = MutableLiveData()
+    val description: MutableLiveData<String> = MutableLiveData()
+
     private val _shoes = MutableLiveData<MutableList<Shoe>>()
     val shoes: LiveData<MutableList<Shoe>>
         get() = _shoes
@@ -29,18 +35,31 @@ class ActivityViewModel : ViewModel() {
         _shoes.value?.add(Shoe(name, size, company, description))
     }
 
-    fun onboardingDone() {
-        _onboarding.value = false
-    }
+    fun addShoe() {
+        if (name.toString() != "" || sizeString.toString() != "" ||
+                company.toString() != "" || description.toString() != "") {
+            _shoes.value?.add(
+                    Shoe(
+                            name.value.toString(),
+                            sizeString.toString().toDouble(),
+                            company.value.toString(),
+                            description.value.toString()
+                    ))
+            }
+        }
 
-    fun createViewForItems(context: Context, item: Shoe): TextView {
-        val myTextView = TextView(context)
-        myTextView.layoutParams =
-                ViewGroup.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT)
-        myTextView.text = (item.company + " - " + item.name)
-        myTextView.textSize = 30F
-        return myTextView
+        fun onboardingDone() {
+            _onboarding.value = false
+        }
+
+        fun createViewForItems(context: Context, item: Shoe): TextView {
+            val myTextView = TextView(context)
+            myTextView.layoutParams =
+                    ViewGroup.LayoutParams(
+                            ViewGroup.LayoutParams.MATCH_PARENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT)
+            myTextView.text = (item.company + " - " + item.name)
+            myTextView.textSize = 30F
+            return myTextView
+        }
     }
-}
