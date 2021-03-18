@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.curiouswizard.theshoestore.databinding.FragmentLoginBinding
 
@@ -19,11 +20,19 @@ class LoginFragment : Fragment() {
         val binding: FragmentLoginBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
 
+        val sharedViewModel: ActivityViewModel by activityViewModels()
+
         binding.buttonSignIn.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            if(sharedViewModel.onboarding.value == true)
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            else
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToShoeListFragment())
         }
         binding.buttonCreateNewLogin.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            if(sharedViewModel.onboarding.value == true)
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            else
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToShoeListFragment())
         }
 
         return binding.root

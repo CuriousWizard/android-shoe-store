@@ -8,18 +8,21 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.curiouswizard.theshoestore.LoginFragment"
-        android:label="LoginFragment"
+        android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_loginFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.curiouswizard.theshoestore.WelcomeFragment"
-        android:label="WelcomeFragment" >
+        android:label="Welcome">
         <action
             android:id="@+id/action_welcomeFragment_to_instructionFragment"
             app:destination="@id/instructionFragment"
@@ -29,5 +32,24 @@
     <fragment
         android:id="@+id/instructionFragment"
         android:name="com.curiouswizard.theshoestore.InstructionFragment"
-        android:label="InstructionFragment" />
+        android:label="@string/instructions">
+        <action
+            android:id="@+id/action_instructionFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeListFragment"
+        android:name="com.curiouswizard.theshoestore.ShoeListFragment"
+        android:label="Shoe List">
+        <action
+            android:id="@+id/action_shoeListFragment_to_shoeDetailFragment"
+            app:destination="@id/shoeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailFragment"
+        android:name="com.curiouswizard.theshoestore.ShoeDetailFragment"
+        android:label="@string/details"
+        tools:layout="@layout/fragment_shoe_detail" />
 </navigation>

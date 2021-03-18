@@ -7,7 +7,20 @@
     <string name="sign_in">Sign in</string>
     <string name="or">OR</string>
     <string name="welcome_to_the_app">Welcome to the app</string>
-    <string name="welcome_message">Hello Newcomer,<br />In this app you can manage your shoes</string>
+    <string name="welcome_message">Hello Newcomer,\n In this app you can manage your shoes</string>
     <string name="next">Next</string>
     <string name="understood">Understood</string>
+    <string name="instructions">Instructions</string>
+    <string name="instruction_message">In the next screen, you will see a list of examples \n
+        To add a new shoe to the list, press the + button in the bottom right corner of your screen.\n
+        Please, press the button to continue</string>
+    <string name="add_new_item">Add new item</string>
+    <string name="logout">Logout</string>
+    <string name="details">Details</string>
+    <string name="label_company">Company</string>
+    <string name="label_name">Name</string>
+    <string name="label_size">Size</string>
+    <string name="label_description">Description</string>
+    <string name="save">Save</string>
+    <string name="empty_details">You cannot leave empty rows</string>
 </resources>
