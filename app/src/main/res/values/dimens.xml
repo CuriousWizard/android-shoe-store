@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_text">36sp</dimen>
+    <dimen name="body_text">18sp</dimen>
+    <dimen name="margin_sides">16dp</dimen>
+    <dimen name="fab_right">16dp</dimen>
+    <dimen name="fab_bottom">16dp</dimen>
+    <dimen name="button_left">16dp</dimen>
+    <dimen name="button_right">16dp</dimen>
+    <dimen name="button_bottom">16dp</dimen>
+</resources>
